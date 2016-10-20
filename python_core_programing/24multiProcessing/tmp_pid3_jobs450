@@ -1,0 +1,1 @@
+                with open(self.file_name) as f : # 使用with读文件

@@ -1,0 +1,3 @@
+
+class SplitFiles():
+    """按行分割文件"""

@@ -1,0 +1,19 @@
+        part_file_name = temp_path + "temp_part_file"
+        if not os.path.exists(temp_path) : # 如果临时目录不存在则创建
+            os.makedirs(temp_path)
+        part_file_name += os.sep + "temp_file_" + str(part_num) + ".part"
+        return part_file_name
+
+    def write_file(self, part_num, *line_content):
+        """将按行分割后的内容写入相应的分割文件中"""
+        part_file_name = self.get_part_file_name(part_num)
+        print(line_content)
+        try :
+            with open(part_file_name, "w") as part_file:
+                part_file.writelines(line_content[0])
+        except IOError as err:
+            print(err)
+
+if __name__ == "__main__":
+    sf = SplitFiles(r"F:\multiple_thread_read_file.txt")
+    sf.split_file()

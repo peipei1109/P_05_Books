@@ -1,0 +1,2 @@
+
+    def __init__(self, file_name, line_count=200):

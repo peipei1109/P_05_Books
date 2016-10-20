@@ -1,0 +1,2 @@
+        try :
+            with open(part_file_name, "w") as part_file:

@@ -1,0 +1,20 @@
+                    for line in f:
+                        if temp_count < self.line_count:
+                            temp_count += 1
+                        else :
+                            self.write_file(part_num, temp_content)
+                            part_num += 1
+                            temp_count = 1
+                            temp_content = []
+                        temp_content.append(line)
+                    else : # 正常结束循环后将剩余的内容写入新文件中
+                        self.write_file(part_num, temp_content)
+
+            except IOError as err:
+                print(err)
+        else:
+            print("%s is not a validate file" % self.file_name)
+
+    def get_part_file_name(self, part_num):
+        """"获取分割后的文件名称：在源文件相同目录下建立临时文件夹temp_part_file，然后将分割后的文件放到该路径下"""
+        temp_path = os.path.dirname(self.file_name) # 获取文件的路径（不含文件名）

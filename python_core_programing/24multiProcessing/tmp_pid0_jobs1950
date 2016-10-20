@@ -1,0 +1,1 @@
+    def write_file(self, part_num, *line_content):

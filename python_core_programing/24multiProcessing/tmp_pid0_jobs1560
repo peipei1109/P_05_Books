@@ -1,0 +1,1 @@
+        temp_path = os.path.dirname(self.file_name) # 获取文件的路径（不含文件名）
